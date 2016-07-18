@@ -1,0 +1,78 @@
+<body ng-app="schedule" ng-controller="TodoCtrl">
+<ion-pane>
+  <ion-header-bar class="bar-dark">
+    <h2 class="title"> Artist List </h2>
+    <div class="bar bar-subheader item-input-inset bar-light">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placehorlde="Search"/>
+      </label>
+    </div>
+    <ion-content class="has-subheader">
+      <ion-list>
+         <ion-item class="item-thumbnail-left">
+            <img src="http://placehold.it/100x100" alt="Photo">
+           <h2>Name</h2>
+           <h3>Reknown</h3>
+           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit </p>
+         </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-header-bar>
+  <ion-content>
+  </ion-content>
+  <ion-tabs class="icon-bottom">
+    <ion-tab  badge="2" badge-style="badge-assertive" icon="ion-home " title="Home"></ion-tab>
+    <ion-tab icon="ion-person"  title="About"></ion-tab>
+    <ion-tab icon="ion-calendar" title="Calendar"></ion-tab>
+  </ion-tabs>
+</ion-pane>
+</body>
+<ion-pane>
+  <ion-header-bar class="bar-positive">
+    <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder=false"></button>
+    <h1 class="title"> Task App </h1>
+    <button class="button button-icon pull-right button-color-positive" ng-click="newTask()">
+      <i class="icon ion-compose"></i>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+      <ion-item ng-show="!tasks.length">
+        No task
+      </ion-item>
+      <ion-item ng-show="tasks.length" ng-repeat="task in tasks" item="task">
+        {{task.task_name}}
+        <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(task.task_id)"></ion-delete-button>
+        <ion-option-button class="button-assertive" ng-click="onItemEdit(task.task_id)">Edit</ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="moveItem(task.task_id,fromIndex,toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-tabs class="icon-bottom">
+    <ion-tab  badge="2" badge-style="badge-assertive" icon="ion-home " title="Home"></ion-tab>
+    <ion-tab icon="ion-person"  title="About"></ion-tab>
+    <ion-tab icon="ion-calendar" title="Calendar"></ion-tab>
+  </ion-tabs>
+</ion-pane>
+<script id="new-task.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar class="bar-stable">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="closeNewTask()">Back</a>
+      <h1 class="title" style="text-align:center;">New Task</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
+    </ion-header-bar>
+    <ion-content>
+      <form ng-submit="createTask(task)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="What do you need to do?"ng-model="task.title"/>
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create task</button>
+        </div>
+      </form>
+    </ion-content>
+  </div>
+</script>

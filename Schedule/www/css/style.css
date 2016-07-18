@@ -1,0 +1,75 @@
+/* Empty. Add your own CSS if you like */
+body{
+  cursor:url('http://ionicframework.com/img/finger.png');
+}
+.bar .title.title-left {
+  text-align: center;
+}
+.reorderBtn{
+  opacity: 0.5;
+}
+.star>.item-content{
+  background-color: #EEE8D6 !important;
+}
+img{
+  width: 360px;
+}
+p{
+  margin: 0 0 5px;
+}
+.splash{
+  background:url(../img/sky5.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
+.branding{
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tagline{
+  display: table;
+  font-family: Tahoma;
+  font-size: 1rem;
+  margin: 0 auto;
+  text-align: center;
+  word-spacing: 0;
+  color:#004063;
+  margin-top:10px; ;
+}
+.item-divider{
+  background-color: #EEE8D6;
+}
+.bar-positive,.tab-nav{
+  background-color: #417D9A !important;
+  border-color:  #417D9A !important;
+}
+.item-thumbnail-left img{
+  border-radius: 10px;
+}
+.item h3{
+  font-size:1.2rem;
+  font-weight: bold;
+  color: #417D9A;
+}
+.dayhighlight{
+  background-color:#9EC6DE ;
+  border-top:20px solid #417D9A;
+}
+.dayhighlight h2{
+  font-size:2rem;
+  color:#417D9A;
+  font-weight: 200;
+}
+.padding{
+  padding: 7px;
+}
+.title.title-left.header-item{
+  left:0px !important;
+}
+.title.title-left.header-item{
+  right: 0px!important;
+}
